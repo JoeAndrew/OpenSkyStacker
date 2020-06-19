@@ -289,7 +289,7 @@ cv::Mat openskystacker::readImage(QString filename)
         result = fitsToMat(filename);
         break;
     case RGB_IMAGE: default:
-        result = cv::imread(filename.toUtf8().constData(), CV_LOAD_IMAGE_ANYDEPTH | CV_LOAD_IMAGE_ANYCOLOR);
+        result = cv::imread(filename.toUtf8().constData(), cv::IMREAD_ANYDEPTH | cv::IMREAD_ANYCOLOR);
         result = convertAndScaleImage(result);
         break;
     }
@@ -376,7 +376,7 @@ cv::Mat openskystacker::rawToMat(QString filename)
     // copy data -- slower, but then we can rely on OpenCV's reference counting
     // also, we have to convert RGB->BGR anyway
     cv::Mat image = cv::Mat(proc->width, proc->height, CV_16UC3);
-    cvtColor(tmp, image, CV_RGB2BGR);
+    cvtColor(tmp, image, cv::COLOR_RGB2BGR);
 
     delete proc;
 
