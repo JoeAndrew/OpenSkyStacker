@@ -112,7 +112,7 @@ std::vector<Star> StarDetector::StarDetectorImpl::getStars(cv::Mat image, int th
         imageGray = image.clone();
     } else {
         imageGray = cv::Mat(image.rows, image.cols, CV_32FC1);
-        cvtColor(image, imageGray, CV_BGR2GRAY);
+        cvtColor(image, imageGray, cv::COLOR_BGR2GRAY);
     }
 
     cv::Mat skyImage = generateSkyBackground(imageGray);
