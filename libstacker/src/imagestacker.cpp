@@ -362,7 +362,7 @@ void ImageStackerPrivate::process(int tolerance, int threads) {
 
     // LibRaw works in RGB while OpenCV works in BGR
     if (getImageType(refImageFileName) == RAW_IMAGE)
-        cv::cvtColor(workingImage, workingImage, CV_RGB2BGR);
+        cv::cvtColor(workingImage, workingImage, cv::COLOR_RGB2BGR);
 
     time_t doneStacking;
     time(&doneStacking);
