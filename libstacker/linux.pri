@@ -1,5 +1,5 @@
 CONFIG += link_pkgconfig
-PKGCONFIG += libraw cfitsio opencv
+PKGCONFIG += libraw cfitsio opencv4
 LIBS += -lCCfits
 
 LIBS += $$PWD/src/3rdparty/focas/unix/hfti.o
